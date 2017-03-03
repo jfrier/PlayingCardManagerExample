@@ -21,7 +21,7 @@ namespace DeckManager
      
             for (var i =0; i < Cards.Count; i++)
             {
-                int index = rnd.Next(0, 52);
+                int index = rnd.Next(0, Cards.Count);
 
                 var currentValue = Cards[i];
                 Cards[i] = Cards[index];
