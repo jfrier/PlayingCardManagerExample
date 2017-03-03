@@ -76,10 +76,28 @@ namespace DeckManager.Tests
 
         #endregion
 
-
         #region shuffle
+        [Test]
+        public void Shuffle_CardsAreShuffledAccordingToRandomNumber()
+        {
+            var card0 = new Card(0, 0);
+            var card1 = new Card(0, 1);
+            var card2 = new Card(1, 0);
 
+            //Setup deck builder
+            var unorderedDeck = new List<Card>() { card0, card1, card2 };
+            builder.Setup(x => x.Generate52CardDeck()).Returns(unorderedDeck);
 
+            //Setup random generator
+            generator.SetupSequence(x => x.Next(It.IsAny<int>(), It.IsAny<int>())).Returns(2).Returns(0).Returns(0);
+
+            deck = new Deck(builder.Object, generator.Object);
+            deck.Shuffle();
+
+            Assert.AreEqual(card0, deck.Cards[0]);
+            Assert.AreEqual(card2, deck.Cards[1]);
+            Assert.AreEqual(card1, deck.Cards[2]);
+        }
         #endregion
     }
 }
