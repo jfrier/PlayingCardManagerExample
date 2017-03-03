@@ -4,8 +4,20 @@ namespace CardManager
 {
     public class Card : IComparable<Card>
     {
-        public int Suit { get; set; }
-        public int Value { get; set; }
+        public int Suit { get; private set; }
+        public int Value { get; private set; }
+
+        public const string SuitOutOfRangeError = "Suit must be between 0-3.";
+        public const string ValueOutOfRangeError = "Value must be between 0-12."; 
+
+        public Card(int suit, int value)
+        {
+            if (suit < 0 || suit > 3) throw new ArgumentOutOfRangeException("Suit", SuitOutOfRangeError);
+            if (value < 0 || value > 12) throw new ArgumentOutOfRangeException("Value", ValueOutOfRangeError);
+
+            Suit = suit;
+            Value = value;
+        }
 
         public int CompareTo(Card other)
         {
@@ -34,8 +46,6 @@ namespace CardManager
             else if (Suit == 2) suitString += "Hearts";
             else if (Suit == 3) suitString += "Spades";
 
-            else throw new InvalidCastException("Unrecognized suite.");
-
             //Handle the named values
             if (Value == 0) valueString = "Ace";
             else if (Value == 10) valueString = "Jack";
@@ -43,7 +53,7 @@ namespace CardManager
             else if (Value == 12) valueString = "King";
             //Handle the int values
             else if (Value > 0 && Value < 10) valueString = (Value + 1).ToString();
-            else throw new InvalidCastException("Unrecognized value.");
+
             return valueString + suitString;
         }
     }

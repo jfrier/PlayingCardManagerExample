@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CardManager
 {
@@ -13,12 +9,13 @@ namespace CardManager
             //Create an ordered deck of cards
             var deck = new Deck();
 
-            //foreach (var card in deck.Cards)
-            //{
-            //    Console.WriteLine(card.ToString());
-            //}
+            Console.WriteLine("Initializing");
+            foreach (var card in deck.Cards)
+            {
+                Console.WriteLine(card.ToString());
+            }
 
-            Console.WriteLine("Shuffling");
+            Console.WriteLine("\nShuffling:");
             deck.Shuffle();
 
             foreach (var card in deck.Cards)
@@ -26,14 +23,13 @@ namespace CardManager
                 Console.WriteLine(card.ToString());
             }
 
-            Console.WriteLine("Sorting");
+            Console.WriteLine("\nSorting:");
             deck.Sort();
 
             foreach (var card in deck.Cards)
             {
                 Console.WriteLine(card.ToString());
             }
-            
         }
     }
 }
