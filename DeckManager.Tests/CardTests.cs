@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace CardManager.Tests
+namespace DeckManager.Tests
 {
     public class CardTests
     {

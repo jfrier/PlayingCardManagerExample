@@ -1,23 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace CardManager
+namespace DeckManager
 {
     public class Deck
     {
-        public List<Card> Cards { get; set; } = new List<Card>();
+        private IDeckBuilder Builder { get; set; }
+        public List<Card> Cards { get; private set; } = new List<Card>();
 
-        public Deck()
+        public Deck(IDeckBuilder builder)
         {
-            //Initialize the deck with 52 cards
-            for (var suit = 0; suit < 4; suit ++ )
-            {
-                for (var value = 0; value < 13; value ++)
-                {
-                    var card = new Card(suit, value);
-                    Cards.Add(card);
-                }
-            }
+            this.Builder = builder;
+            Cards = Builder.Generate52CardDeck().ToList();
         }
 
         public void Shuffle()

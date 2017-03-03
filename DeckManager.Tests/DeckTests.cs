@@ -1,21 +1,19 @@
-﻿using System;
+﻿using NUnit.Framework;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using System.Diagnostics;
+using Moq;
 
-namespace CardManager.Tests
+namespace DeckManager.Tests
 {
     public class DeckTests
     {
         private Deck deck;
+        private Mock<IDeckBuilder> builder;
 
         [SetUp]
         public void SetUp()
         {
-            deck = new Deck();
+            builder = new Mock<IDeckBuilder>();
+            deck = new Deck(builder.Object);
         }
 
         #region constructor
@@ -42,45 +40,69 @@ namespace CardManager.Tests
             }
         }
 
-        /// <summary>
-        /// Deck contains 52 cards.
-        /// </summary>
-        [Test]
-        public void Initialize_DeckContains52Cards()
-        {
-            Assert.AreEqual(52, deck.Cards.Count);
-        }
         #endregion
 
+        #region sort
+
         [Test]
-        public void blah()
+        public void Sort_SuitsOrderedCorrectly()
         {
-            foreach (var card in deck.Cards)
-            {
-                Debug.WriteLine(card.ToString());
-            }
+            var card0 = new Card(1, 0);
+            var card1 = new Card(0, 0);
+            var card2 = new Card(2, 0);
 
-            Debug.WriteLine("Shuffling");
-            deck.Shuffle();
+            var unorderedDeck = new List<Card>() { card0, card1, card2 };
+            builder.Setup(x => x.Generate52CardDeck()).Returns(unorderedDeck);
 
-            foreach (var card in deck.Cards)
-            {
-                Debug.WriteLine(card.ToString());
-            }
-
-            Debug.WriteLine("Sorting");
+            deck = new Deck(builder.Object);
             deck.Sort();
 
-            foreach (var card in deck.Cards)
-            {
-                Debug.WriteLine(card.ToString());
-            }
+            Assert.AreEqual(card1, deck.Cards[0]);
+            Assert.AreEqual(card0, deck.Cards[1]);
+            Assert.AreEqual(card2, deck.Cards[2]);
         }
 
+        [Test]
+        public void Sort_ValuesOrderedCorrectly()
+        {
+            var card0 = new Card(0, 1);
+            var card1 = new Card(0, 0);
+            var card2 = new Card(0, 2);
+
+            var unorderedDeck = new List<Card>() { card0, card1, card2 };
+            builder.Setup(x => x.Generate52CardDeck()).Returns(unorderedDeck);
+
+            deck = new Deck(builder.Object);
+            deck.Sort();
+
+            Assert.AreEqual(card1, deck.Cards[0]);
+            Assert.AreEqual(card0, deck.Cards[1]);
+            Assert.AreEqual(card2, deck.Cards[2]);
+        }
+
+        [Test]
+        public void Sort_SuitsAndValuesOrderedCorrectly()
+        {
+            var card0 = new Card(1, 1);
+            var card1 = new Card(2, 0);
+            var card2 = new Card(1, 0);
+
+            var unorderedDeck = new List<Card>() { card0, card1, card2 };
+            builder.Setup(x => x.Generate52CardDeck()).Returns(unorderedDeck);
+
+            deck = new Deck(builder.Object);
+            deck.Sort();
+
+            Assert.AreEqual(card2, deck.Cards[0]);
+            Assert.AreEqual(card0, deck.Cards[1]);
+            Assert.AreEqual(card1, deck.Cards[2]);
+        }
+
+        #endregion
 
 
         #region shuffle
-        
+
 
         #endregion
     }

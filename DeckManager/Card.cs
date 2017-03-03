@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CardManager
+namespace DeckManager
 {
     public class Card : IComparable<Card>
     {
