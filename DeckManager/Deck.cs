@@ -6,22 +6,24 @@ namespace DeckManager
 {
     public class Deck
     {
-        private IDeckBuilder Builder { get; set; }
         public List<Card> Cards { get; private set; } = new List<Card>();
 
-        public Deck(IDeckBuilder builder)
+        private IDeckBuilder Builder { get; set; }
+        private IRandomGenerator Generator { get; set; }
+
+        public Deck(IDeckBuilder builder, IRandomGenerator generator)
         {
             this.Builder = builder;
+            this.Generator = generator;
+
             Cards = Builder.Generate52CardDeck().ToList();
         }
 
         public void Shuffle()
         {
-            var rnd = new Random();
-     
             for (var i =0; i < Cards.Count; i++)
             {
-                int index = rnd.Next(0, Cards.Count);
+                int index = Generator.Next(0, Cards.Count);
 
                 var currentValue = Cards[i];
                 Cards[i] = Cards[index];

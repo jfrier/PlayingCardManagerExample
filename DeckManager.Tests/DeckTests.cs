@@ -8,12 +8,14 @@ namespace DeckManager.Tests
     {
         private Deck deck;
         private Mock<IDeckBuilder> builder;
+        private Mock<IRandomGenerator> generator;
 
         [SetUp]
         public void SetUp()
         {
             builder = new Mock<IDeckBuilder>();
-            deck = new Deck(builder.Object);
+            generator = new Mock<IRandomGenerator>();
+            deck = new Deck(builder.Object, generator.Object);
         }
 
         #region sort
@@ -28,7 +30,7 @@ namespace DeckManager.Tests
             var unorderedDeck = new List<Card>() { card0, card1, card2 };
             builder.Setup(x => x.Generate52CardDeck()).Returns(unorderedDeck);
 
-            deck = new Deck(builder.Object);
+            deck = new Deck(builder.Object, generator.Object);
             deck.Sort();
 
             Assert.AreEqual(card1, deck.Cards[0]);
@@ -46,7 +48,7 @@ namespace DeckManager.Tests
             var unorderedDeck = new List<Card>() { card0, card1, card2 };
             builder.Setup(x => x.Generate52CardDeck()).Returns(unorderedDeck);
 
-            deck = new Deck(builder.Object);
+            deck = new Deck(builder.Object, generator.Object);
             deck.Sort();
 
             Assert.AreEqual(card1, deck.Cards[0]);
@@ -64,7 +66,7 @@ namespace DeckManager.Tests
             var unorderedDeck = new List<Card>() { card0, card1, card2 };
             builder.Setup(x => x.Generate52CardDeck()).Returns(unorderedDeck);
 
-            deck = new Deck(builder.Object);
+            deck = new Deck(builder.Object, generator.Object);
             deck.Sort();
 
             Assert.AreEqual(card2, deck.Cards[0]);

@@ -6,10 +6,14 @@ namespace DeckManager
     {
         static void Main(string[] args)
         {
-            //Create an ordered deck of cards
+            //Set up the deck dependencies
             var builder = new DeckBuilder();
-            var deck = new Deck(builder);
+            var generator = new RandomGenerator();
 
+            //Create the deck
+            var deck = new Deck(builder, generator);
+
+            //Print out the results of the shuffle and sort methods
             Console.WriteLine("Initializing");
             foreach (var card in deck.Cards)
             {
