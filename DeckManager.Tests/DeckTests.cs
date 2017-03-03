@@ -8,13 +8,13 @@ namespace DeckManager.Tests
     {
         private Deck deck;
         private Mock<IDeckBuilder> builder;
-        private Mock<IRandomGenerator> generator;
+        private Mock<IRandomWrapper> generator;
 
         [SetUp]
         public void SetUp()
         {
             builder = new Mock<IDeckBuilder>();
-            generator = new Mock<IRandomGenerator>();
+            generator = new Mock<IRandomWrapper>();
             deck = new Deck(builder.Object, generator.Object);
         }
 

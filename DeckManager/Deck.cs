@@ -9,9 +9,9 @@ namespace DeckManager
         public List<Card> Cards { get; private set; } = new List<Card>();
 
         private IDeckBuilder Builder { get; set; }
-        private IRandomGenerator Generator { get; set; }
+        private IRandomWrapper Generator { get; set; }
 
-        public Deck(IDeckBuilder builder, IRandomGenerator generator)
+        public Deck(IDeckBuilder builder, IRandomWrapper generator)
         {
             this.Builder = builder;
             this.Generator = generator;

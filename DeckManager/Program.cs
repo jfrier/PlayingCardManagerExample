@@ -8,7 +8,7 @@ namespace DeckManager
         {
             //Set up the deck dependencies
             var builder = new DeckBuilder();
-            var generator = new RandomGenerator();
+            var generator = new RandomWrapper();
 
             //Create the deck
             var deck = new Deck(builder, generator);
