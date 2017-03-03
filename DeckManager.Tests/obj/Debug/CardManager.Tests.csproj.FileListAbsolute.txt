@@ -1,9 +1,0 @@
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager.Tests\bin\Debug\CardManager.Tests.dll
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager.Tests\bin\Debug\CardManager.Tests.pdb
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager.Tests\bin\Debug\CardManager.exe
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager.Tests\bin\Debug\nunit.framework.dll
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager.Tests\bin\Debug\CardManager.pdb
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager.Tests\bin\Debug\nunit.framework.xml
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager.Tests\obj\Debug\CardManager.Tests.csprojResolveAssemblyReference.cache
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager.Tests\obj\Debug\CardManager.Tests.dll
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager.Tests\obj\Debug\CardManager.Tests.pdb

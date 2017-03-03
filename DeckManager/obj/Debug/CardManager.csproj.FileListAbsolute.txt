@@ -1,6 +1,0 @@
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager\bin\Debug\CardManager.exe.config
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager\bin\Debug\CardManager.exe
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager\bin\Debug\CardManager.pdb
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager\obj\Debug\CardManager.csprojResolveAssemblyReference.cache
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager\obj\Debug\CardManager.exe
-c:\users\jfrier\documents\visual studio 2015\Projects\CardManager\CardManager\obj\Debug\CardManager.pdb
