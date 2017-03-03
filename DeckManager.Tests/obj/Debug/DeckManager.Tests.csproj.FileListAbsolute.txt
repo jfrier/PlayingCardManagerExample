@@ -1,0 +1,9 @@
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager.Tests\bin\Debug\CardManager.Tests.dll
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager.Tests\bin\Debug\CardManager.Tests.pdb
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager.Tests\bin\Debug\DeckManager.exe
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager.Tests\bin\Debug\nunit.framework.dll
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager.Tests\bin\Debug\DeckManager.pdb
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager.Tests\bin\Debug\nunit.framework.xml
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager.Tests\obj\Debug\DeckManager.Tests.csprojResolveAssemblyReference.cache
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager.Tests\obj\Debug\CardManager.Tests.dll
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager.Tests\obj\Debug\CardManager.Tests.pdb

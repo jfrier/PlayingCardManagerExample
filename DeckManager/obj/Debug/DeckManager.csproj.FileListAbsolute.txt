@@ -1,0 +1,6 @@
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager\bin\Debug\DeckManager.exe.config
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager\bin\Debug\DeckManager.exe
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager\bin\Debug\DeckManager.pdb
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager\obj\Debug\DeckManager.csprojResolveAssemblyReference.cache
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager\obj\Debug\DeckManager.exe
+C:\Users\jfrier\Documents\Visual Studio 2015\Projects\DeckManager\DeckManager\obj\Debug\DeckManager.pdb
